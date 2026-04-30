@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef1f5;
+}
+
+/* Центрування всього сайту */
+.container {
+    width: 1100px;
+    margin: 20px auto;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 10px;
+}
+
+/* Меню */
+.menu {
+    margin-top: 15px;
+}
+
+.menu a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Основний контент */
+.content {
+    width: 70%;
+    float: left;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Бокова панель */
+.sidebar {
+    width: 25%;
+    float: right;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Футер */
+.footer {
+    clear: both;
+    margin-top: 20px;
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+.bio img {
+    width: 30%;
+    display: inline-block;
+}
+.columns {
+    column-count: 3;
+}
