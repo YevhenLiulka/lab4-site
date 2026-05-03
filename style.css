@@ -1,133 +1,98 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
 body {
     font-family: Arial, sans-serif;
-    background: #f4f6f9;
+    background: #f4f4f4;
 
     display: flex;
     flex-direction: column;
-
     min-height: 100vh;
 }
 
-/* HEADER */
+/* ШАПКА */
 .header {
-    width: 100%;
-    background: linear-gradient(135deg, #4e73df, #224abe);
+    background: #333;
     color: white;
-
     text-align: center;
-    padding: 25px;
+    padding: 20px;
 }
 
-/* MENU */
 .menu {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    margin-top: 10px;
 }
 
 .menu a {
+    color: white;
+    margin: 0 10px;
     text-decoration: none;
-    color: white;
-    padding: 10px 16px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 8px;
-    transition: 0.3s;
 }
 
-.menu a:hover {
-    background: white;
-    color: #224abe;
-}
-
-/* MAIN CONTAINER */
+/* ГОЛОВНИЙ GRID */
 .container {
-    width: 100%;
-    padding: 20px;
+    display: grid;
 
-    display: flex;
+    grid-template-columns: 3fr 1fr; /* контент + сайдбар */
     gap: 20px;
 
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+
     flex: 1;
 }
 
-/* CONTENT */
+/* ОСНОВНИЙ КОНТЕНТ */
 .content {
-    flex: 3;
     background: white;
-    padding: 25px;
-    border-radius: 10px;
-}
-
-/* SIDEBAR */
-.sidebar {
-    flex: 1;
-    background: #e9ecef;
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
 }
 
-/* FOOTER */
+/* САЙДБАР */
+.sidebar {
+    background: #ddd;
+    padding: 20px;
+}
+
+/* ФУТЕР */
 .footer {
-    width: 100%;
-    background: #222;
+    background: #333;
     color: white;
     text-align: center;
-    padding: 20px;
-}
-
-/* FLEX BLOCKS */
-.flex-row {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.flex-item {
-    flex: 1;
-    background: white;
     padding: 15px;
-    border-radius: 10px;
 }
 
-/* CENTER (для демонстрації) */
-.center-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* GRID ДЛЯ КАРТОК (наприклад головна сторінка) */
+.cards {
+    display: grid;
 
-    height: 200px;
-    background: #dee2e6;
-    border-radius: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+
     margin-top: 20px;
 }
 
-/* ORDER */
-.order-1 { order: 1; }
-.order-2 { order: 2; }
-.order-3 { order: 3; }
+.card {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
 
-/* ADAPTIVE */
-@media (max-width: 900px) {
+/* GRID СПАН (розтягнутий блок) */
+.card.big {
+    grid-column: span 2;
+}
 
+/* АДАПТИВ */
+@media (max-width: 800px) {
     .container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
-    .flex-row {
-        flex-direction: column;
-    }
-
-    .menu {
-        flex-wrap: wrap;
+    .card.big {
+        grid-column: span 1;
     }
 }
