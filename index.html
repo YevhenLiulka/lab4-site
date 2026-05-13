@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -8,6 +7,30 @@
 </head>
 
 <body>
+
+<div id="custommenu">
+
+    <div class="menu-item" onclick="doAction('copy')">
+        Скопіювати текст
+    </div>
+
+    <div class="menu-item" onclick="doAction('increase')">
+        Збільшити шрифт
+    </div>
+
+    <div class="menu-item" onclick="doAction('decrease')">
+        Зменшити шрифт
+    </div>
+
+    <div class="menu-item" onclick="doAction('background')">
+        Змінити фон
+    </div>
+
+    <div class="menu-item" onclick="doAction('close')">
+        Закрити меню
+    </div>
+
+</div>
     
 <div class="banner">
 
@@ -28,9 +51,11 @@
     <img src="images/rocket.png" class="rocket" alt="">
 
 </div>
+
 <div class="wrapper">
 
 <header class="header">
+
     <h1>Персональна сторінка</h1>
     <p>Люлька Євген Валентинович, СН-31</p>
 
@@ -41,18 +66,36 @@
         <a href="hobby.html">Хоббі</a>
         <a href="interesting.html">Цікаве</a>
     </nav>
+
 </header>
 
 <div class="container">
 
 <main class="content">
-<h2>Головна</h2>
-<div class="widget">
-    <h3>Навчальне відео</h3>
 
-    <iframe width="100%" height="315"
-    src="https://www.youtube.com/watch?v=tgbNymZ7vqY">
-    </iframe>
+<h2>Головна</h2>
+
+<div class="widget">
+
+    <h3>Інтерактивне зображення</h3>
+
+    <img 
+        src="images/photo1.jpg"
+        id="hoverImage"
+        class="interactive-image"
+        alt="">
+
+</div>
+
+<div class="number-block">
+
+    <h3>Введення числа</h3>
+
+    <input 
+        type="text"
+        id="numberInput"
+        placeholder="Введіть тільки цифри">
+
 </div>
 
 <p><b>Біографія:</b> Короткий опис життєвого шляху.
@@ -70,9 +113,18 @@
 </main>
 
 <aside class="sidebar">
-<h3>Реклама</h3>
-<p>Блок 1</p>
-<p>Блок 2</p>
+    
+    <h3>Навчальне відео</h3>
+
+    <iframe width="100%" height="315"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
+
+    <h3>Реклама</h3>
+
+    <p>Блок 1</p>
+    <p>Блок 2</p>
+
 </aside>
 
 </div>
@@ -87,5 +139,8 @@
     <div class="card big">Хоббі</div>
     <div class="card">Цікаве</div>
 </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
