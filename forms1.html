@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Список + кнопка</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+
+function checkSelect() {
+
+    var sel = document.getElementById("mySelect");
+    var btn = document.getElementById("myButton");
+
+    if(sel.selectedIndex == 0) {
+        btn.disabled = true;
+    }
+    else {
+        btn.disabled = false;
+    }
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header class="header">
+
+<h1>Форма зі списком</h1>
+
+<nav class="menu">
+<a href="index.html">Головна</a>
+<a href="forms1.html">Список + кнопка</a>
+<a href="forms2.html">Райони і вулиці</a>
+<a href="forms3.html">10 чекбоксів</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<main class="content">
+
+<h2>Випадаючий список</h2>
+
+<select id="mySelect" onchange="checkSelect()">
+
+<option>Виберіть елемент</option>
+<option>Елемент 1</option>
+<option>Елемент 2</option>
+<option>Елемент 3</option>
+<option>Елемент 4</option>
+<option>Елемент 5</option>
+<option>Елемент 6</option>
+<option>Елемент 7</option>
+<option>Елемент 8</option>
+<option>Елемент 9</option>
+<option>Елемент 10</option>
+
+</select>
+
+<br><br>
+
+<button id="myButton" disabled>
+Надіслати
+</button>
+
+</main>
+
+</div>
+
+<footer class="footer">
+<p>© 2026</p>
+</footer>
+
+</div>
+
+</body>
+</html>
