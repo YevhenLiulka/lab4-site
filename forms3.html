@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>10 чекбоксів</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+
+function checkBoxes() {
+
+    var boxes =
+    document.getElementsByName("flag");
+
+    var count = 0;
+
+    for(var i=0; i<boxes.length; i++) {
+
+        if(boxes[i].checked) {
+            count++;
+        }
+
+    }
+
+    var msg =
+    document.getElementById("message");
+
+    if(count < 5) {
+
+        msg.innerText =
+        "Вибрано замало прапорців";
+
+        msg.style.color = "red";
+
+    }
+    else {
+
+        msg.innerText =
+        "Достатня кількість прапорців";
+
+        msg.style.color = "green";
+
+    }
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header class="header">
+
+<h1>Прапорці</h1>
+
+<nav class="menu">
+<a href="index.html">Головна</a>
+<a href="forms1.html">Список + кнопка</a>
+<a href="forms2.html">Райони і вулиці</a>
+<a href="forms3.html">10 чекбоксів</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<main class="content">
+
+<h2>Оберіть прапорці</h2>
+
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 1<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 2<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 3<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 4<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 5<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 6<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 7<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 8<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 9<br>
+<input type="checkbox" name="flag" onclick="checkBoxes()"> 10<br>
+
+<br>
+
+<p id="message"></p>
+
+</main>
+
+</div>
+
+<footer class="footer">
+<p>© 2026</p>
+</footer>
+
+</div>
+
+</body>
+</html>
