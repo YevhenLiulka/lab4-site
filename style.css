@@ -369,3 +369,45 @@ body {
 iframe {
     border-radius: 10px;
 }
+.interactive-block{
+    margin-top: 20px;
+}
+
+.interactive-image{
+    width: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.number-block{
+    margin-top: 20px;
+}
+
+#numberInput{
+    padding: 10px;
+    width: 250px;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
+#custommenu{
+    width: 220px;
+    background: white;
+    border: 1px solid gray;
+    position: absolute;
+    visibility: hidden;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.menu-item{
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu-item:hover{
+    border: 1px solid blue;
+    background: #f0f0f0;
+}
