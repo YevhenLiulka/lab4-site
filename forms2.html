@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Райони і вулиці</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+
+var streetsGal = [
+'Галицька',
+'Театральна',
+'Вірменська'
+];
+
+var streetsFran = [
+'Наукова',
+'Сахарова',
+'Княгині Ольги'
+];
+
+var streetsLych = [
+'Личаківська',
+'Пекарська',
+'Зелена'
+];
+
+var streetsAll = [
+null,
+streetsGal,
+streetsFran,
+streetsLych
+];
+
+function showStreets(regionIndex) {
+
+    var streetsSelect =
+    document.getElementById("streets");
+
+    streetsSelect.innerHTML = "";
+
+    if(regionIndex == 0) {
+
+        streetsSelect.style.visibility =
+        "hidden";
+
+        return;
+    }
+
+    streetsSelect.style.visibility =
+    "visible";
+
+    if(regionIndex == 4) {
+
+        var allStreets = [];
+
+        allStreets =
+        allStreets.concat(streetsGal);
+
+        allStreets =
+        allStreets.concat(streetsFran);
+
+        allStreets =
+        allStreets.concat(streetsLych);
+
+        for(var i=0; i<allStreets.length; i++) {
+
+            var opt =
+            new Option(allStreets[i]);
+
+            streetsSelect.add(opt);
+
+        }
+
+    }
+    else {
+
+        for(var i=0;
+            i<streetsAll[regionIndex].length;
+            i++) {
+
+            var opt =
+            new Option(
+            streetsAll[regionIndex][i]);
+
+            streetsSelect.add(opt);
+
+        }
+
+    }
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header class="header">
+
+<h1>Райони і вулиці</h1>
+
+<nav class="menu">
+<a href="index.html">Головна</a>
+<a href="forms1.html">Список + кнопка</a>
+<a href="forms2.html">Райони і вулиці</a>
+<a href="forms3.html">10 чекбоксів</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<main class="content">
+
+<h2>Оберіть район</h2>
+
+<select onchange="showStreets(this.selectedIndex)">
+
+<option>Виберіть район</option>
+<option>Галицький</option>
+<option>Франківський</option>
+<option>Личаківський</option>
+<option>Всі райони</option>
+
+</select>
+
+<br><br>
+
+<select id="streets"
+style="visibility:hidden;">
+
+</select>
+
+</main>
+
+</div>
+
+<footer class="footer">
+<p>© 2026</p>
+</footer>
+
+</div>
+
+</body>
+</html>
