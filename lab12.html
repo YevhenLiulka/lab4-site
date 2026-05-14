@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab12</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+
+        function checkFields() {
+            if(document.getElementById("username").value == "" ||
+               document.getElementById("password").value == "")
+            {
+                document.getElementById("sendBtn").disabled = true;
+            }
+            else {
+                document.getElementById("sendBtn").disabled = false;
+            }
+        }
+
+        function changePasswordStyle() {
+
+            let pass = document.getElementById("styledPassword");
+
+            pass.style.backgroundColor = "red";
+            pass.style.color = "white";
+            pass.style.fontSize = "10pt";
+            pass.style.height = "28px";
+        }
+
+        function hideRows() {
+
+            document.getElementById("row1").style.display = "none";
+
+            document.getElementById("row3").style.visibility = "hidden";
+        }
+
+        function validateForm() {
+
+            let pass1 = document.getElementById("pass1").value;
+            let pass2 = document.getElementById("pass2").value;
+            let text = document.getElementById("textField").value;
+            let select = document.getElementById("city");
+
+            if(pass1 != "" &&
+               pass2 != "" &&
+               pass1 == pass2 &&
+               text != "" &&
+               select.selectedIndex != 0)
+            {
+                document.getElementById("mainButton").disabled = false;
+            }
+            else {
+                document.getElementById("mainButton").disabled = true;
+            }
+        }
+
+        function checkMobile() {
+
+            let str = document.getElementById("mobile").value;
+
+            let re = /^(\+380|0)(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99)\d{7}$/;
+
+            if(re.test(str))
+                alert("Номер правильний");
+            else
+                alert("Номер неправильний");
+        }
+
+        function checkPostIndex() {
+
+            let str = document.getElementById("postcode").value;
+
+            let re = /^79\d{3}$/;
+
+            if(re.test(str))
+                alert("Львівський індекс правильний");
+            else
+                alert("Неправильний індекс");
+        }
+
+        function checkLvivPhone() {
+
+            let str = document.getElementById("lvivphone").value;
+
+            let re = /^(\(032\))?[2-8]\d{6}$|^[2-8]\d{2}-\d{2}-\d{2}$/;
+
+            if(re.test(str))
+                alert("Телефон правильний");
+            else
+                alert("Телефон неправильний");
+        }
+
+        function removeComments() {
+
+            let text = document.getElementById("commentText").value;
+
+            let re = /<!--.*?-->/gs;
+
+            document.getElementById("commentText").value =
+                text.replace(re, "");
+        }
+
+        function removeTags() {
+
+            let text = document.getElementById("tagText").value;
+
+            let re = /<\/?(p|font|br|hr)[^>]*>/gi;
+
+            document.getElementById("tagText").value =
+                text.replace(re, "");
+        }
+
+        function trimSpaces() {
+
+            let text = document.getElementById("spaceText").value;
+
+            let re = /^\s+|\s+$/g;
+
+            document.getElementById("spaceText").value =
+                text.replace(re, "");
+        }
+
+        function checkYear() {
+
+            let year = document.getElementById("year").value;
+
+            let re = /^(19\d{2}|20\d{2})$/;
+
+            if(re.test(year))
+                alert("Рік правильний");
+            else
+                alert("Рік неправильний");
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Лабораторна робота №12</h1>
+
+    <h2>Перевірка полів</h2>
+
+    <input type="text" id="username"
+    onkeyup="checkFields()" placeholder="Логін">
+
+    <input type="password" id="password"
+    onkeyup="checkFields()" placeholder="Пароль">
+
+    <button id="sendBtn" disabled>Send</button>
+
+    <hr>
+
+    <h2>Стилізація поля пароля</h2>
+
+    <input type="password" id="styledPassword">
+
+    <button onclick="changePasswordStyle()">
+        Змінити стиль
+    </button>
+
+    <hr>
+
+    <h2>Таблиця</h2>
+
+    <table border="1">
+
+        <tr id="row1">
+            <td>1</td>
+            <td>Перший рядок</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Другий рядок</td>
+        </tr>
+
+        <tr id="row3">
+            <td>3</td>
+            <td>Третій рядок</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <button onclick="hideRows()">
+        Приховати рядки
+    </button>
+
+    <hr>
+
+    <h2>Форма перевірки</h2>
+
+    <input type="password" id="pass1"
+    onkeyup="validateForm()" placeholder="Пароль">
+
+    <br><br>
+
+    <input type="password" id="pass2"
+    onkeyup="validateForm()" placeholder="Повторіть пароль">
+
+    <br><br>
+
+    <input type="text" id="textField"
+    onkeyup="validateForm()" placeholder="Текст">
+
+    <br><br>
+
+    <select id="city" onchange="validateForm()">
+
+        <option>Виберіть місто</option>
+        <option>Львів</option>
+        <option>Київ</option>
+        <option>Одеса</option>
+
+    </select>
+
+    <br><br>
+
+    <button id="mainButton" disabled>
+        Підтвердити
+    </button>
+
+    <hr>
+
+    <h2>Перевірка мобільного</h2>
+
+    <input type="text" id="mobile">
+
+    <button onclick="checkMobile()">
+        Перевірити
+    </button>
+
+    <hr>
+
+    <h2>Поштовий індекс Львова</h2>
+
+    <input type="text" id="postcode">
+
+    <button onclick="checkPostIndex()">
+        Перевірити
+    </button>
+
+    <hr>
+
+    <h2>Львівський телефон</h2>
+
+    <input type="text" id="lvivphone">
+
+    <button onclick="checkLvivPhone()">
+        Перевірити
+    </button>
+
+    <hr>
+
+    <h2>Видалення HTML-коментарів</h2>
+
+    <textarea id="commentText" rows="5" cols="40">
+
+<!-- Коментар -->
+Текст
+
+    </textarea>
+
+    <br><br>
+
+    <button onclick="removeComments()">
+        Очистити
+    </button>
+
+    <hr>
+
+    <h2>Видалення тегів</h2>
+
+    <textarea id="tagText" rows="5" cols="40">
+
+<p>Текст</p>
+<br>
+<hr>
+
+    </textarea>
+
+    <br><br>
+
+    <button onclick="removeTags()">
+        Видалити теги
+    </button>
+
+    <hr>
+
+    <h2>Видалення пробілів</h2>
+
+    <input type="text" id="spaceText"
+    value="     текст із пробілами     ">
+
+    <button onclick="trimSpaces()">
+        Очистити
+    </button>
+
+    <hr>
+
+    <h2>Перевірка року</h2>
+
+    <input type="text" id="year">
+
+    <button onclick="checkYear()">
+        Перевірити
+    </button>
+
+</body>
+</html>
